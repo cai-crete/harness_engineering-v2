@@ -17,13 +17,20 @@
       "Bash(python .claude/skills/code-reviewer/scripts/pr_analyzer.py project.10_print --base HEAD~1 --verbose)",
       "Bash(python .claude/skills/code-reviewer/scripts/pr_analyzer.py . --base HEAD~1 --verbose)",
       "Bash(npx tsc *)",
-      "Bash(find \"\\\\\\\\loft254\\\\project\\\\00_수주개발\\\\# AI test\\\\Harness Engineering\\\\harness_engineering-v2\" -type f)"
+      "Bash(find \"\\\\\\\\loft254\\\\project\\\\00_수주개발\\\\# AI test\\\\Harness Engineering\\\\harness_engineering-v2\" -type f)",
+      "Read(///loft254/project/00_수주개발/# AI test/Harness Engineering/harness_engineering-v2/docs/exec-plans/completed/**)",
+      "Read(///loft254/project/00_수주개발/# AI test/Harness Engineering/harness_engineering-v2/docs/exec-plans/**)",
+      "Bash(cp \"\\\\\\\\\\\\\\\\loft254\\\\\\\\project\\\\\\\\00_수주개발\\\\\\\\# AI test\\\\\\\\Harness Engineering\\\\\\\\harness_engineering-v2\\\\\\\\docs\\\\\\\\exec-plans\\\\\\\\active\\\\\\\\Frontend\\\\\\\\design-system-ops-guide-260420.md\" \"\\\\\\\\\\\\\\\\loft254\\\\\\\\project\\\\\\\\00_수주개발\\\\\\\\# AI test\\\\\\\\Harness Engineering\\\\\\\\harness_engineering-v2\\\\\\\\docs\\\\\\\\exec-plans\\\\\\\\completed\\\\\\\\Frontend\\\\\\\\design-system-ops-guide-260420.md\")",
+      "Bash(rm \"\\\\\\\\\\\\\\\\loft254\\\\\\\\project\\\\\\\\00_수주개발\\\\\\\\# AI test\\\\\\\\Harness Engineering\\\\\\\\harness_engineering-v2\\\\\\\\docs\\\\\\\\exec-plans\\\\\\\\active\\\\\\\\Frontend\\\\\\\\design-system-ops-guide-260420.md\")",
+      "Read(///loft254/project/00_수주개발/# AI test/Harness Engineering/harness_engineering-v2/docs/**)"
     ],
     "additionalDirectories": [
       "c:\\Users\\USER01\\Downloads\\cai-harness-print\\project.10_print\\sources\\document_template",
       "c:\\Users\\USER01\\Downloads\\cai-harness-print\\project.10_print\\app\\api\\library",
       "c:\\Users\\USER01\\Downloads\\cai-harness-print\\docs\\exec-plans",
-      "c:\\Users\\USER01\\Downloads\\cai-harness-print\\docs\\exec-plans\\active"
+      "c:\\Users\\USER01\\Downloads\\cai-harness-print\\docs\\exec-plans\\active",
+      "\\\\loft254\\project\\00_수주개발\\# AI test\\Harness Engineering\\harness_engineering-v2\\docs\\design-docs",
+      "\\\\loft254\\project\\00_수주개발\\# AI test\\Harness Engineering\\harness_engineering-v2\\docs\\exec-plans\\active\\Frontend"
     ]
   }
 }

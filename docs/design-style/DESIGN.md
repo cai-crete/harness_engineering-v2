@@ -8,7 +8,7 @@
 - 기술 용어와 설계 언어 혼용
 - 한국어 + 영어 병용 (기술 레이어: 영어, 개념 레이어: 한국어)
 - 불필요한 수식어 없음, 직관적 명명
-- 노드별 브랜드 가이드라인: `_context/brand-guidelines.md` 참조
+- 노드별 브랜드 가이드라인: `project_[node_name]/_context/brand-guidelines.md` 참조
 
 ## 네이밍 컨벤션
 
@@ -26,8 +26,13 @@
 
 ## 컬러 & 타이포그래피 등 UI 스타일링
 
-- 앱 인터페이스 공통: `_context/design-style-guide-CAI.md` 참조
-- 노드별: `_context/design-style-guide-node.md` 참조
+- 앱 인터페이스 공통: `docs/design-style/design-style-guide-CAI.md` 참조
+- 노드별: `project_[node_name]/_context/design-style-guide-node.md` 참조
+
+## 디자인 스킬 운용
+
+- AGENT C가 스킬(`/shape`, `/impeccable`, `/critique`, `/audit` 등)을 사용하는 시점과 절차:
+  `docs/references/loop-frontend-design-agent.txt` §DESIGN SKILLS 섹션 참조
 
 ---
 

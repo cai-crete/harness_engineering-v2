@@ -26,7 +26,7 @@ Agent(Claude Code)는 **Project-10 노드 앱을 빌드하는 기술 실행자**
 |----------|------|------|-----------|
 | **AGENT A** | 실행 에이전트 | Protocol 작성·Node App(API Route, buildSystemPrompt) 구현·결함 수정 | `docs/references/loop-b-execution-agent.txt` |
 | **AGENT B** | 검증 에이전트 | Protocol + Node App 독립 검증·PASS/FAIL 판정·결함 보고서 생성 | `docs/references/loop-b-verification-agent.txt` |
-| **AGENT C** | 디자인 에이전트 | UI/UX·프론트엔드 구현·브랜드 컴플라이언스·컴포넌트 빌드 | `docs/references/loop-c-design-agent.txt` |
+| **AGENT C** | 디자인 에이전트 | UI/UX·프론트엔드 구현·브랜드 컴플라이언스·컴포넌트 빌드 | `docs/references/loop-frontend-design-agent.txt` |
 
 > **에이전트 간 경계 원칙**
 > - AGENT A만 Protocol 파일을 작성·수정한다
@@ -59,7 +59,7 @@ Agent(Claude Code)는 **Project-10 노드 앱을 빌드하는 기술 실행자**
 | **정합성 검토** | `docs/design-docs/review-guide.md` → 검토 대상 파일 전체 | 보고서 포맷·3단계 프로세스·심각도 기준 확립 후 검토 수행 |
 | **AGENT A — 실행 에이전트** | `docs/references/loop-b-execution-agent.txt` → `product-specs/[node_name].md` | 실행 역할 확립 후 노드 계약 파악 |
 | **AGENT B — 검증 에이전트** | `docs/references/loop-b-verification-agent.txt` → `loop-review-handoff-[node_name].md` | 검증 역할 확립 후 핸드오프 내용 파악 |
-| **AGENT C — 디자인 에이전트** | `docs/references/loop-c-design-agent.txt` → `_context/design-style-guide-node.md` | 디자인 역할 확립 후 노드 비주얼 기준 파악 |
+| **AGENT C — 디자인 에이전트** | `docs/references/loop-frontend-design-agent.txt` → `_context/design-style-guide-node.md` | 디자인 역할 확립 후 노드 비주얼 기준 파악 |
 
 ---
 
@@ -134,21 +134,29 @@ Agent(Claude Code)는 **Project-10 노드 앱을 빌드하는 기술 실행자**
 ## 디렉토리 구조
 
 ```
-# 논리 경로명 기준 표기 (실제: cai-harness-print/)
+# 논리 경로명 기준 표기 (실제: harness_engineering-v2/)
 CAI/
 ├── AGENTS.md              ← 이 파일. 모든 세션 첫 로드.
 ├── ARCHITECTURE.md        ← Agent 기술 빌드 기준
+├── .impeccable.md         ← CAI 브랜드 컨텍스트 (impeccable 스킬 자동 참조)
 ├── .claude/
-│   └── plugins/
-│       └── ralph-wiggum/          ← Loop A 자가-반복 검증 플러그인
-│           ├── plugin.yaml        ← 플러그인 메타데이터 (max 3회)
-│           ├── commands/
-│           │   ├── ralph-loop.md  ← /ralph-loop 커맨드 정의
-│           │   └── cancel-ralph.md ← /cancel-ralph 커맨드 정의
-│           ├── hooks/
-│           │   └── stop-hook.sh   ← Stop hook: 종료 차단 + 재주입
-│           └── scripts/
-│               └── setup-ralph-loop.sh ← 상태 파일 초기화
+│   ├── plugins/
+│   │   └── ralph-wiggum/          ← Loop A 자가-반복 검증 플러그인
+│   │       ├── plugin.yaml        ← 플러그인 메타데이터 (max 3회)
+│   │       ├── commands/
+│   │       │   ├── ralph-loop.md  ← /ralph-loop 커맨드 정의
+│   │       │   └── cancel-ralph.md ← /cancel-ralph 커맨드 정의
+│   │       ├── hooks/
+│   │       │   └── stop-hook.sh   ← Stop hook: 종료 차단 + 재주입
+│   │       └── scripts/
+│   │           └── setup-ralph-loop.sh ← 상태 파일 초기화
+│   └── skills/                    ← 디자인 스킬 체계 (AGENT C 전용)
+│       ├── impeccable/            ← 핵심 빌드 스킬 (craft, teach, extract)
+│       ├── shape/                 ← UX 디스커버리 → 디자인 브리프
+│       ├── audit/                 ← 기술 품질 게이트 (/20, ≥14 필요)
+│       ├── critique/              ← UX 리뷰 (Nielsen /40)
+│       ├── polish/                ← 최종 마무리 (항상 마지막)
+│       └── [기타 개선 스킬]/       ← layout, typeset, animate, harden 등
 └── docs/
     ├── FRONTEND.md        ← 프론트엔드 개발 가이드
     ├── PLANS.md           ← 로드맵 & 개발 우선순위
@@ -161,14 +169,15 @@ CAI/
     │   ├── core-beliefs.md           ← CAI 핵심 철학
     │   ├── protocol-design-guide.md  ← Protocol 작성·검증·컴플라이언스 표준
     │   └── review-guide.md           ← 오류 검토 보고서 작성 표준 (3단계 프로세스·심각도·아카이브 규칙)
-    ├── design-docs/
-    │   ├── DESIGN.md                  ← 디자인 시스템 & UI/UX 표준 개요
-    │   └── design-style-guide-CAI.md  ← CAI 전체 디자인 스타일 가이드
+    ├── design-style/                 ← CAI 디자인 시스템 (AGENT C 전용)
+    │   ├── DESIGN.md                  ← 디자인 선언 (브랜드 원칙·네이밍·UI 원칙)
+    │   └── design-style-guide-CAI.md  ← CAI 공통 디자인 토큰·컴포넌트 전체 스펙
     ├── reviews/
     │   └── Error_Review_Report-v.[N]-[YYMMDD].md  ← 정합성 검토 보고서 아카이브
     ├── exec-plans/
     │   ├── active/                   ← 진행 중인 작업 계획 (living document)
     │   ├── completed/                ← 완료된 작업 계획 아카이브
+    │   ├── progress/                 ← claude-progress.txt (세션 간 컨텍스트 인계)
     │   └── tech-debt-tracker.md      ← 기술 부채 목록
     ├── generated/                    ← 코드베이스에서 자동 추출된 검증된 사실
     ├── product-specs/
@@ -176,11 +185,11 @@ CAI/
     │   ├── node-spec-template.md     ← 노드 스펙 작성 템플릿
     │   └── [node_name].md            ← 노드 스펙
     └── references/
-        ├── loop-b-execution-agent.txt   ← AGENT A: 실행 에이전트 지침
-        ├── loop-b-verification-agent.txt ← AGENT B: 검증 에이전트 지침
-        ├── loop-c-design-agent.txt      ← AGENT C: 디자인 에이전트 지침
-        ├── protocol-patterns-llms.txt   ← Protocol 패턴 레퍼런스
-        └── api-patterns-llms.txt        ← API 통합 패턴 레퍼런스
+        ├── loop-b-execution-agent.txt      ← AGENT A: 실행 에이전트 지침
+        ├── loop-b-verification-agent.txt   ← AGENT B: 검증 에이전트 지침
+        ├── loop-frontend-design-agent.txt  ← AGENT C: 디자인 에이전트 지침
+        ├── protocol-patterns-llms.txt      ← Protocol 패턴 레퍼런스
+        └── api-patterns-llms.txt           ← API 통합 패턴 레퍼런스
 ```
 
 ---

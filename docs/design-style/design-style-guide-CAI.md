@@ -3,7 +3,7 @@
 본 문서는 CAI CANVAS 서비스의 일관된 브랜드 정체성과 전문가급 UX를 보장하기 위한 인터페이스 디자인 표준입니다.
 
 **문서 구성:**
-- **PART A** : @desing-style-guide-CAI.md — 앱 인터페이스 공통 디자인 시스템 (모든 CAI 노드에 적용)
+- **PART A** : @design-style-guide-CAI.md — 앱 인터페이스 공통 디자인 시스템 (모든 CAI 노드에 적용)
 - **PART B** : @design-style-guide-node.md — 'node' 노드 전용 문서 템플릿 디자인 시스템
 
 
@@ -326,9 +326,8 @@ CTA(Call To Action) 버튼은 3종 + 1 variant로 분류한다.
 # PART B · 'node' 노드 — 문서 템플릿 디자인 시스템
 
 > 이 파트의 모든 내용은 **'node' 노드 전용**입니다.
-> --의 디자인 기준이며,
 > PART A의 앱 인터페이스 디자인 규칙을 기준으로 관리됩니다.
-> 예외사항이 있을 경우 별도 표기합니다. (예외사항 > PART A)
+> 예외사항이 있을 경우 별도 표기합니다. 예외사항은 PART A보다 우선합니다.
 ---
 
 ## B.0 'node' 서비스 개요
