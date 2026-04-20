@@ -107,18 +107,19 @@ PART B의 템플릿 전용 폰트(§B.1)와 별개로 관리됩니다.
 | :--- | :--- | :--- |
 | **52px** | `3.25rem` | CTA-primary, CTA-secondary |
 | **44px** | `2.75rem` | CTA-options, 기능 탭(NodeSelector 드롭다운), 숫자 인디케이터, 아이콘 버튼(툴바), 기타 가로형 입력 요소 |
-| **36px** | `2.25rem` | CTA-secondary-small **(예외 — 모달 내부 등 좁은 영역 전용. 최솟값 44px 규칙의 유일한 공인 예외)** |
+| **36px** | `2.25rem` | CTA-secondary-small **(1차 예외 — 모달 내부 등 좁은 영역 전용)** |
+| **28px** | `1.75rem` | CTA-tertiary-small **(2차 예외 — 좁은 영역 내부 최저 위계 인라인 버튼 전용)** |
 
 > **최소 터치/클릭 영역 규칙 (Touch Target Minimum)**
 > Apple Human Interface Guidelines 기준: **모든 인터랙티브 요소의 물리적 높이·너비 자체가 44px 이상이어야 한다.**
 > padding 보정으로 히트 영역만 44px를 확보하는 방식은 허용하지 않는다. 시각적 높이(height 속성)가 반드시 44px 이상이어야 한다.
-> **유일한 예외**: CTA-secondary-small (36px) — 모달 내부 등 좁은 영역에서만 사용하며, 이 예외는 다른 컴포넌트에 확장 적용이 불가하다.
+> **공인 예외**: CTA-secondary-small (36px) 및 CTA-tertiary-small (28px) — 각각 좁은 영역 전용이며, 이 예외는 다른 컴포넌트에 확장 적용이 불가하다.
 
 ---
 
 ## A.5 CTA 컴포넌트 가이드
 
-CTA(Call To Action) 버튼은 3종 + 1 variant로 분류한다.
+CTA(Call To Action) 버튼은 3종 + 2 variant로 분류한다.
 모든 CTA 문구는 **§A.1 · §A.2 기준: Bebas Neue / 타이틀 위계** 적용.
 
 ---
@@ -176,6 +177,30 @@ CTA(Call To Action) 버튼은 3종 + 1 variant로 분류한다.
 | :--- | :--- | :--- | :--- | :--- |
 | **default** | `white` | `black` | `1.5px solid black` | pointer |
 | **disabled** | `white` | `gray-300` | `1.5px solid gray-300` | not-allowed |
+
+---
+
+### CTA-tertiary-small (예: 모달 등 하위 버튼)
+
+패널·리스트 내부의 인라인 소형 액션 버튼. CTA-secondary-small보다 한 단계 낮은 시각적 위계.
+모달, 리스트 등 좁은 영역 내부에 적용.
+
+| 속성 | 값 |
+| :--- | :--- |
+| 높이 | `1.75rem` (28px) |
+| 너비 | 내용에 따라 가변 (`fit-content`) |
+| 모서리 곡률 | `radius-box` (`0.625rem`) |
+| 폰트 | Bebas Neue / 타이틀 (16pt) |
+| 보더 | `1px solid` |
+
+| 상태 | 배경 | 텍스트 | 보더 | 커서 |
+| :--- | :--- | :--- | :--- | :--- |
+| **default** | `white` | `gray-500` | `1px solid gray-200` | pointer |
+| **hover** | `white` | `black` | `1px solid black` | pointer |
+| **disabled** | `white` | `gray-300` | `1px solid gray-200` | not-allowed |
+
+> **높이 예외 명시**: 28px는 §A.4 최솟값(44px) 및 CTA-secondary-small(36px)에 이어 두 번째 공인 예외. 좁은 영역 내부 또는 가장 낮은 시각적 위계가 요구되는 맥락에 한해 적용하며, 다른 컨텍스트로 확장 불가.
+> **secondary-small과의 구분**: secondary-small은 모달 단일 버튼(검은 보더·텍스트, pill 형태), tertiary-small은 패널 인라인 다중 버튼(회색 보더·텍스트, box 형태).
 
 ---
 
@@ -285,6 +310,7 @@ CTA(Call To Action) 버튼은 3종 + 1 variant로 분류한다.
 | **CTA-secondary** | 배경 `white` → `gray-100` | `background-color 150ms ease` |
 | **CTA-options (default)** | 보더 `gray-200` → `black` | `border-color 150ms ease` |
 | **CTA-options (selected)** | 변화 없음 (이미 active) | — |
+| **CTA-tertiary-small** | 텍스트 `gray-500` → `black`, 보더 `gray-200` → `black` | `color 150ms ease, border-color 150ms ease` |
 | **툴바 아이콘 버튼** | 배경 `transparent` → `gray-100` | `background-color 100ms ease` |
 
 ### A.8.2 Focus 상태 규칙
