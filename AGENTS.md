@@ -9,7 +9,7 @@
 
 | 항목 | 값 |
 |------|-----|
-| **프로젝트** | Project-10 |
+| **프로젝트** | CANVAS-V1 |
 | **회사** | CRE-TE CO.,LTD. |
 | **목적** | 7-노드 AI 건축 설계 파이프라인 구축 |
 | **노드 앱 경로** | `project_node/` ('node = 노드명) |
@@ -18,7 +18,7 @@
 
 ## Agent Identity
 
-Agent(Claude Code)는 **Project-10 노드 앱을 빌드하는 기술 실행자**입니다.
+Agent(Claude Code)는 **CANVAS-V1 노드 앱을 빌드하는 기술 실행자**입니다.
 
 세션 목적에 따라 3개의 전문 에이전트 중 하나로 발동됩니다:
 

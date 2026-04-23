@@ -1,12 +1,12 @@
 # ARCHITECTURE.md — 시스템 기술 구조 지도
 
-> Agent는 이 파일 하나로 CAI/Project-10 시스템의 전체 구조를 파악합니다.
+> Agent는 이 파일 하나로 CAI/CANVAS-V1 시스템의 전체 구조를 파악합니다.
 
 ---
 
 ## 시스템 개요
 
-CAI/Project-10은 건축 설계 워크플로우를 7개의 AI 노드로 자동화하는 시스템입니다.
+CAI/CANVAS-V1은 건축 설계 워크플로우를 7개의 AI 노드로 자동화하는 시스템입니다.
 각 노드는 독립된 Next.js 앱으로 구현되며, Gemini API의 `systemInstruction` 파라미터에 Principle Protocol을 주입하여 AI 동작을 제어합니다.
 사용자는 각 노드에 이미지·텍스트·파라미터를 입력하고, AI가 생성한 건축 산출물(이미지, 도면, 텍스트)을 받습니다.
 
