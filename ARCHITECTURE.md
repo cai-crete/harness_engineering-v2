@@ -55,6 +55,69 @@ project_[node_name]/
 
 ---
 
+## 하네스 디렉토리 구조
+
+```
+# 논리 경로명 기준 표기 (실제: harness_engineering-v2/)
+CAI/
+├── AGENTS.md              ← Agent 헌법. 모든 세션 첫 로드.
+├── ARCHITECTURE.md        ← 이 파일. 시스템 기술 구조 지도.
+├── .impeccable.md         ← CAI 브랜드 컨텍스트 (impeccable 스킬 자동 참조)
+├── .claude/
+│   ├── plugins/
+│   │   └── ralph-wiggum/          ← Loop A 자가-반복 검증 플러그인
+│   │       ├── plugin.yaml        ← 플러그인 메타데이터 (max 3회)
+│   │       ├── commands/
+│   │       │   ├── ralph-loop.md  ← /ralph-loop 커맨드 정의
+│   │       │   └── cancel-ralph.md ← /cancel-ralph 커맨드 정의
+│   │       ├── hooks/
+│   │       │   └── stop-hook.sh   ← Stop hook: 종료 차단 + 재주입
+│   │       └── scripts/
+│   │           └── setup-ralph-loop.sh ← 상태 파일 초기화
+│   └── skills/                    ← 디자인 스킬 체계 (AGENT C 전용)
+│       ├── impeccable/            ← 핵심 빌드 스킬 (craft, teach, extract)
+│       ├── shape/                 ← UX 디스커버리 → 디자인 브리프
+│       ├── audit/                 ← 기술 품질 게이트 (/20, ≥14 필요)
+│       ├── critique/              ← UX 리뷰 (Nielsen /40)
+│       ├── polish/                ← 최종 마무리 (항상 마지막)
+│       └── [기타 개선 스킬]/       ← layout, typeset, animate, harden 등
+└── docs/
+    ├── FRONTEND.md        ← 프론트엔드 개발 가이드
+    ├── PLANS.md           ← 로드맵 & 개발 우선순위
+    ├── PRODUCT_SENSE.md   ← 제품 의사결정 원칙
+    ├── QUALITY_SCORE.md   ← 출력 품질 + Protocol 컴플라이언스 기준
+    ├── RELIABILITY.md     ← Protocol 검증 파이프라인
+    ├── SECURITY.md        ← 보안 가이드라인
+    ├── design-docs/
+    │   ├── index.md                  ← 설계 원칙 개요
+    │   ├── core-beliefs.md           ← CAI 핵심 철학
+    │   ├── protocol-design-guide.md  ← Protocol 작성·검증·컴플라이언스 표준
+    │   └── review-guide.md           ← 오류 검토 보고서 작성 표준 (3단계 프로세스·심각도·아카이브 규칙)
+    ├── design-style/                 ← CAI 디자인 시스템 (AGENT C 전용)
+    │   ├── DESIGN.md                  ← 디자인 선언 (브랜드 원칙·네이밍·UI 원칙)
+    │   └── design-style-guide-CAI.md  ← CAI 공통 디자인 토큰·컴포넌트 전체 스펙
+    ├── reviews/
+    │   └── Error_Review_Report-v.[N]-[YYMMDD].md  ← 정합성 검토 보고서 아카이브
+    ├── exec-plans/
+    │   ├── active/                   ← 진행 중인 작업 계획 (living document)
+    │   ├── completed/                ← 완료된 작업 계획 아카이브
+    │   ├── progress/                 ← claude-progress.txt (세션 간 컨텍스트 인계)
+    │   └── tech-debt-tracker.md      ← 기술 부채 목록
+    ├── generated/                    ← 코드베이스에서 자동 추출된 검증된 사실
+    ├── product-specs/
+    │   ├── index.md                  ← 노드 스펙 인덱스
+    │   ├── node-spec-template.md     ← 노드 스펙 작성 템플릿
+    │   └── [node_name].md            ← 노드 스펙
+    └── references/
+        ├── loop-b-execution-agent.txt      ← AGENT A: 실행 에이전트 지침
+        ├── loop-b-verification-agent.txt   ← AGENT B: 검증 에이전트 지침
+        ├── loop-frontend-design-agent.txt  ← AGENT C: 디자인 에이전트 지침
+        ├── protocol-patterns-llms.txt      ← Protocol 패턴 레퍼런스
+        └── api-patterns-llms.txt           ← API 통합 패턴 레퍼런스
+```
+
+---
+
 ## 레이어 구조 및 경계
 구현 및 검증 권한: 각 레이어의 구현(A, C) 및 검증(B) 권한과 세부 루프 절차는 `AGENTS.md`의 정의를 최우선으로 따른다.
 

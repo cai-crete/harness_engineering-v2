@@ -4,33 +4,28 @@
 
 ## 방금 무엇을 했는가
 
-`project_node/index.md` 파일을 신규 생성했다.
+`AGENTS.md`의 `## 디렉토리 구조` 섹션(하네스 최상위 구조)을 `ARCHITECTURE.md`로 이동하고 원본을 삭제했다.
 
 **작업 내용:**
-- ARCHITECTURE.md, AGENTS.md, 기존 `project_node/_context/` 파일 전체를 분석
-- ARCHITECTURE.md에 명시된 구조와 실제 `project_node/` 디렉토리 구조의 차이를 확인:
-  - `_context/protocol/`이 서브디렉토리로 존재 (ARCHITECTURE.md에는 파일 직접 나열)
-  - `business-context.md`가 `_context/`에 추가로 존재 (ARCHITECTURE.md 미기재)
-  - `components/`가 `app/` 내부에 위치 (ARCHITECTURE.md는 최상위 표기)
-  - 라우트가 `generate/`로 구현 (ARCHITECTURE.md는 `api/generate/`)
-- 분석 결과를 바탕으로 `project_node/index.md` 작성:
-  - 폴더 트리 정의
-  - 각 파일·폴더의 역할, 담당 Agent, 규칙 명시
-  - 구성 요소 간 상호작용 흐름도 (ASCII 다이어그램)
-  - Agent별 소유 영역 매트릭스
-  - 노드 유형별 선택적 폴더 정의 (public, types, samples, imageProcessing, parsers, templates, renderers)
+- AGENTS.md L134-193의 `## 디렉토리 구조` 섹션은 하네스 최상위 구조(CAI/), ARCHITECTURE.md는 노드별 내부 구조(`project_[node_name]/`)를 담고 있어 내용이 중복되지 않음을 확인
+- ARCHITECTURE.md에 `## 하네스 디렉토리 구조` 섹션 신규 추가 (코드맵 ~ 레이어 구조 사이에 삽입)
+  - `AGENTS.md` 설명: "이 파일. 모든 세션 첫 로드." → "Agent 헌법. 모든 세션 첫 로드."
+  - `ARCHITECTURE.md` 설명: "Agent 기술 빌드 기준" → "이 파일. 시스템 기술 구조 지도."
+- AGENTS.md에서 `## 디렉토리 구조` 섹션 전체 삭제
 
 ---
 
 ## 어디까지 완료됐는가
 
-- [x] `project_node/index.md` 생성 완료
-- [x] `docs/exec-plans/active/node-index-md-creation.md` 작업지시서 생성
+- [x] `project_node/index.md` 생성 (이전 세션)
+- [x] `ARCHITECTURE.md` 노드 앱 내부 구조 다이어그램 실제 구조 반영 (이전 세션)
+- [x] `AGENTS.md` 세션 루틴 테이블 업데이트 (이전 세션)
+- [x] `AGENTS.md` 디렉토리 구조 섹션 → `ARCHITECTURE.md` 이동 완료
+- [ ] `docs/exec-plans/active/node-index-md-creation.md` → `completed/` 이동 (사용자 확인 필요)
 
 ---
 
 ## 다음에 무엇을 해야 하는가
 
 1. **exec-plan 이동**: `docs/exec-plans/active/node-index-md-creation.md` → `docs/exec-plans/completed/` (사용자 확인 후)
-2. **ARCHITECTURE.md 동기화 여부 결정**: 실제 구조와 ARCHITECTURE.md 간 차이(protocol 서브디렉토리, business-context.md, components 위치 등)를 공식 반영할지 사용자에게 확인 필요
-3. **신규 노드 생성 시 index.md 활용**: `project_node/` 복사 시 `[node_name]` 플레이스홀더 교체 절차를 문서화
+2. **ARCHITECTURE.md 추가 동기화 여부 결정**: 이미 반영 완료. 추가 요청 있으면 수행.
