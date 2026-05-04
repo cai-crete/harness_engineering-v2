@@ -1,13 +1,36 @@
+## 세션 일시: 2026-05-04
+
+---
+
 ## 방금 무엇을 했는가
 
-에이전트가 방금 수행한 내용을 상세히 작성합니다.
+`project_node/index.md` 파일을 신규 생성했다.
 
+**작업 내용:**
+- ARCHITECTURE.md, AGENTS.md, 기존 `project_node/_context/` 파일 전체를 분석
+- ARCHITECTURE.md에 명시된 구조와 실제 `project_node/` 디렉토리 구조의 차이를 확인:
+  - `_context/protocol/`이 서브디렉토리로 존재 (ARCHITECTURE.md에는 파일 직접 나열)
+  - `business-context.md`가 `_context/`에 추가로 존재 (ARCHITECTURE.md 미기재)
+  - `components/`가 `app/` 내부에 위치 (ARCHITECTURE.md는 최상위 표기)
+  - 라우트가 `generate/`로 구현 (ARCHITECTURE.md는 `api/generate/`)
+- 분석 결과를 바탕으로 `project_node/index.md` 작성:
+  - 폴더 트리 정의
+  - 각 파일·폴더의 역할, 담당 Agent, 규칙 명시
+  - 구성 요소 간 상호작용 흐름도 (ASCII 다이어그램)
+  - Agent별 소유 영역 매트릭스
+  - 노드 유형별 선택적 폴더 정의 (public, types, samples, imageProcessing, parsers, templates, renderers)
+
+---
 
 ## 어디까지 완료됐는가
 
-에이전트가 계획서에서 어디까지 진행했는지 상세히 작성합니다.
+- [x] `project_node/index.md` 생성 완료
+- [x] `docs/exec-plans/active/node-index-md-creation.md` 작업지시서 생성
 
+---
 
 ## 다음에 무엇을 해야 하는가
 
-에이전트가 계획서에서 다음 단계에 무엇을 진행해야 하는지 상세히 작성합니다.
+1. **exec-plan 이동**: `docs/exec-plans/active/node-index-md-creation.md` → `docs/exec-plans/completed/` (사용자 확인 후)
+2. **ARCHITECTURE.md 동기화 여부 결정**: 실제 구조와 ARCHITECTURE.md 간 차이(protocol 서브디렉토리, business-context.md, components 위치 등)를 공식 반영할지 사용자에게 확인 필요
+3. **신규 노드 생성 시 index.md 활용**: `project_node/` 복사 시 `[node_name]` 플레이스홀더 교체 절차를 문서화

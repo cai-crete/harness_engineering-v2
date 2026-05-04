@@ -53,7 +53,7 @@ Agent(Claude Code)는 **Project-10 노드 앱을 빌드하는 기술 실행자**
 
 | 세션 유형 | 우선 로드 | 이유 |
 |----------|----------|------|
-| 노드 앱 개발 | `project_[node_name]/_context/` | 해당 노드 전용 하네스가 최우선 |
+| 노드 앱 개발 | `project_[node_name]/index.md` → `project_[node_name]/_context/` | 폴더 체계·Agent 소유 경계 확립 후 노드 전용 하네스 로드 |
 | 하네스 수정 | `CAI/docs/` | 회사 전체 표준을 다루는 세션 |
 | Protocol 검증 | `CAI/docs/` + 해당 Protocol 파일 | 검증 기준과 대상 모두 필요 |
 | **정합성 검토** | `docs/design-docs/review-guide.md` → 검토 대상 파일 전체 | 보고서 포맷·3단계 프로세스·심각도 기준 확립 후 검토 수행 |
