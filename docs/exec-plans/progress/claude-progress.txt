@@ -1,4 +1,32 @@
-## 세션 일시: 2026-05-04
+## 세션 일시: 2026-05-08
+
+---
+
+## 방금 무엇을 했는가
+
+`project_node/_context/index.md` 생성.
+_context/ 폴더의 에이전트 진입점 색인 문서로, 다음 내용을 포함:
+- 폴더 전체 구조 다이어그램 (현재 파일 + 예정 protocol/ 서브폴더)
+- 에이전트 유형별 필수 독서 목록: 공통 전체 / UI·문서 생성 / Gemini 이미지 에이전트
+- 각 문서의 권한·성격·변경 주체 정의
+- 문서 간 충돌 시 우선순위 계층 (Constitution > 마스터 프로토콜 > 브랜드 > 세부 프로토콜 > 디자인 시스템 > 에이전트 추론)
+- protocol/ 폴더에 새 파일 추가 시 index.md 갱신 절차
+
+## 어디까지 완료됐는가
+
+- [x] `project_node/_context/index.md` 생성 완료
+- [x] `docs/exec-plans/active/context-index-creation.md` 작업지시서 생성 완료
+
+## 다음에 무엇을 해야 하는가
+
+1. `protocol-node-vN` 마스터 프로토콜 본문 작성 (현재 placeholder "노드별 프로토콜 파일." 상태)
+2. `protocol/` 서브폴더 생성 및 노드별 세부 프로토콜 작성
+3. 세부 프로토콜 추가 시 `_context/index.md` 폴더 구조 다이어그램·독서 목록 갱신
+4. 이전 세션 미완: `docs/exec-plans/active/node-index-md-creation.md` → `completed/` 이동 (사용자 확인 필요)
+
+---
+
+## [이전 세션: 2026-05-04]
 
 ---
 
